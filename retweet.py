@@ -17,7 +17,7 @@ api = tweepy.API(auth)
 # Where q='#example', change #example to whatever hashtag or keyword you want to search.
 # Where items(5), change 5 to the amount of retweets you want to tweet.
 # Make sure you read Twitter's rules on automation - don't spam!
-for tweet in tweepy.Cursor(api.search, q='#example').items(5):
+for tweet in tweepy.Cursor(api.search, q='sneak peek').items(1):
     try:
         print('\nRetweet Bot found tweet by @' + tweet.user.screen_name + '. ' + 'Attempting to retweet.')
 
@@ -27,7 +27,7 @@ for tweet in tweepy.Cursor(api.search, q='#example').items(5):
         # Where sleep(10), sleep is measured in seconds.
         # Change 10 to amount of seconds you want to have in-between retweets.
         # Read Twitter's rules on automation. Don't spam!
-        sleep(10)
+        sleep(60)
 
     # Some basic error handling. Will print out why retweet failed, into your terminal.
     except tweepy.TweepError as error:
